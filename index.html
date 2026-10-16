@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCamp</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px 30px;
+            color: #000;
+            background-color: #fff;
+            text-align: left; /* متمایل به چپ کامل */
+            direction: ltr;
+        }
+        header {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .brand-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 4px 0;
+        }
+        .tagline {
+            font-size: 14px;
+            margin: 0 0 6px 0;
+        }
+        .sub-tagline {
+            font-size: 13px;
+            color: #444;
+            margin: 0 0 10px 0;
+        }
+        nav {
+            text-align: left;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        nav a {
+            color: #1a0dab;
+            text-decoration: underline;
+            margin-right: 12px;
+        }
+        hr.divider {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+            text-align: left;
+        }
+        section {
+            text-align: left; /* اطمینان از چپ‌چین بودن بخش‌ها */
+            margin-bottom: 40px;
+            max-width: 900px; /* جلوگیری از کشیدگی بی‌رویه در مانیتورهای بسیار عریض */
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            text-align: left;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 15px 0 5px 0;
+            text-align: left;
+        }
+        p {
+            font-size: 14px;
+            margin: 6px 0;
+            text-align: left;
+        }
+        ul {
+            text-align: left;
+            margin: 5px 0 15px 20px;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        .media-box {
+            text-align: left;
+            margin: 15px 0;
+        }
+        img.content-image {
+            display: block;
+            max-width: 550px;
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        video.content-video {
+            display: block;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border: 1px solid #000;
+            background: #000;
+            margin: 10px 0;
+        }
+        /* استایل جدول عین اسکرین‌شات */
+        table {
+            border-collapse: collapse;
+            font-size: 13px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        table, th, td {
+            border: 1px solid #777;
+        }
+        th, td {
+            padding: 4px 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        /* فرم ثبت نام چپ چین */
+        fieldset {
+            border: 1px solid #999;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            text-align: left;
+        }
+        legend {
+            font-size: 13px;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="password"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: 320px;
+            max-width: 100%;
+            padding: 4px 6px;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-size: 13px;
+            display: block;
+        }
+        .radio-check-group label {
+            display: inline-block;
+            font-weight: normal;
+            font-size: 13px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .btn-submit {
+            padding: 6px 16px;
+            font-size: 13px;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: 1px solid #777;
+        }
+        .btn-submit:hover {
+            background: #e0e0e0;
+        }
+        /* نقشه گوگل */
+        .map-box {
+            max-width: 700px;
+            width: 100%;
+            height: 380px;
+            border: 1px solid #888;
+            margin-top: 15px;
+        }
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر سایت -->
+    <header>
+        <div class="brand-title">TechCamp</div>
+        <div class="tagline"><strong>Learn.</strong> Build. <em>Become.</em></div>
+        <div class="sub-tagline">Your journey into the world of programming starts here.</div>
+        <nav>
+            <a href="#about">About</a> | 
+            <a href="#courses">Courses</a> | 
+            <a href="#schedule">Schedule</a> | 
+            <a href="#instructors">Instructors</a> | 
+            <a href="#register">Register</a> | 
+            <a href="#location">Contact</a>
+        </nav>
+    </header>
+
+    <hr class="divider">
+
+    <!-- بخش درباره ما -->
+    <section id="about">
+        <h2>About TechCamp</h2>
+        <div class="media-box">
+            <!-- تصویر ساخته‌شده کلاس -->
+            <img src="c:\Users\Me\Desktop\Screenshot_20261010_211345_Video Player.jpg" alt="TechCamp Classroom in LA" class="content-image">
+        </div>
+        <p>TechCamp is a modern programming academy focused on practical skills and real-world projects.</p>
+        <p>Our goal is to help students learn programming, build projects and prepare for their future careers.</p>
+        <p><a href="#register" style="color:#1a0dab;">Start Your Learning Journey</a></p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- دوره‌ها -->
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <p>Choose the course that matches your interests and goals.</p>
+
+        <h3>Front-End Development</h3>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Responsive Design</li>
+        </ul>
+        <p>Duration: <strong>80 Hours</strong></p>
+        <p>Level: <strong>Beginner to Advanced</strong></p>
+        <p>Price: <strong>$299</strong></p>
+
+        <h3>Python Programming</h3>
+        <ul>
+            <li>Python Fundamentals</li>
+            <li>Object-Oriented Programming</li>
+            <li>File Handling</li>
+            <li>APIs</li>
+        </ul>
+        <p>Duration: <strong>60 Hours</strong></p>
+        <p>Level: <strong>Beginner</strong></p>
+        <p>Price: <strong>$249</strong></p>
+
+        <h3>UI/UX Design</h3>
+        <ul>
+            <li>Design Principles</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>Figma</li>
+        </ul>
+        <p>Duration: <strong>45 Hours</strong></p>
+        <p>Level: <strong>Beginner to Intermediate</strong></p>
+        <p>Price: <strong>$199</strong></p>
+
+        <h3>Artificial Intelligence</h3>
+        <ul>
+            <li>Python for AI</li>
+            <li>Machine Learning</li>
+            <li>Neural Networks</li>
+            <li>AI Projects</li>
+        </ul>
+        <p>Duration: <strong>90 Hours</strong></p>
+        <p>Level: <strong>Advanced</strong></p>
+        <p>Price: <strong>$399</strong></p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- جدول زمان‌بندی -->
+    <section id="schedule">
+        <h2>Course Schedule</h2>
+        <p style="font-size: 12px; color: #555;">TechCamp Weekly Schedule</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Instructor</th>
+                    <th>Days</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                    <th>Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML & CSS</td>
+                    <td>Alex Johnson</td>
+                    <td>Saturday / Monday</td>
+                    <td>18:00 - 20:00</td>
+                    <td>20 Hours</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>John Smith</td>
+                    <td>Sunday / Tuesday</td>
+                    <td>17:00 - 19:00</td>
+                    <td>45 Hours</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>React</td>
+                    <td>Sarah Brown</td>
+                    <td>Monday / Wednesday</td>
+                    <td>18:00 - 20:00</td>
+                    <td>40 Hours</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Michael Wilson</td>
+                    <td>Tuesday / Thursday</td>
+                    <td>16:00 - 18:00</td>
+                    <td>60 Hours</td>
+                    <td>Beginner</td>
+                </tr>
+                <tr>
+                    <td>Artificial Intelligence</td>
+                    <td>Emma Davis</td>
+                    <td>Saturday / Wednesday</td>
+                    <td>19:00 - 21:00</td>
+                    <td>90 Hours</td>
+                    <td>Advanced</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr class="divider">
+
+    <!-- مدرسین -->
+    <section id="instructors">
+        <h2>Our Instructors</h2>
+        
+        <h3>Alex Johnson</h3>
+        <p style="font-size: 13px; color: #555;">Front-End Developer</p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+
+        <h3>Sarah Brown</h3>
+        <p style="font-size: 13px; color: #555;">Software Engineer</p>
+        <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+        </ul>
+
+        <h3>Michael Wilson</h3>
+        <p style="font-size: 13px; color: #555;">Python Developer</p>
+        <ul>
+            <li>Python</li>
+            <li>Django</li>
+            <li>FastAPI</li>
+            <li>Data Science</li>
+        </ul>
+    </section>
+
+    <hr class="divider">
+
+    <!-- بخش ویدیو -->
+    <section id="video">
+        <h2>Learn With TechCamp</h2>
+        <p>Watch this short introduction to programming and technology.</p>
+        <div class="media-box">
+            <!-- ویدیو با قابلیت پخش و پوستر تصویر ساخته‌شده دوم -->
+            <video class="<video width="100%" controls="" style="border-radius: 5px; background: #000;">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>" controls poster="image_gen_4ef14f0e-68fa-4869-a9e8-ee0e4017356b_0.webp">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- فرم ثبت نام با تمام فیلدهای دقیق اسکرین‌شات -->
+    <section id="register">
+        <h2>Course Registration</h2>
+        <p>Fill out the form below to register for your desired course.</p>
+        
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number:</label>
+                    <input type="tel" placeholder="+1 555 123 4567">
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" placeholder="Minimum 8 characters">
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth:</label>
+                    <input type="date">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Gender</legend>
+                <div class="radio-check-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Prefer not to say</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Course Selection</legend>
+                <div class="form-group">
+                    <label>Select Your Course:</label>
+                    <select>
+                        <option>-- Select a course --</option>
+                        <option>Front-End Development</option>
+                        <option>Python Programming</option>
+                        <option>UI/UX Design</option>
+                        <option>Artificial Intelligence</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Programming Level:</label>
+                    <div class="radio-check-group" style="margin-top: 5px;">
+                        <label><input type="radio" name="prog_level" value="beginner"> Beginner</label>
+                        <label><input type="radio" name="prog_level" value="intermediate"> Intermediate</label>
+                        <label><input type="radio" name="prog_level" value="advanced"> Advanced</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Programming Interests</legend>
+                <p style="font-size: 13px; margin-bottom: 8px;">Select the technologies you are interested in:</p>
+                <div class="radio-check-group">
+                    <label><input type="checkbox"> HTML</label>
+                    <label><input type="checkbox"> CSS</label>
+                    <label><input type="checkbox"> JavaScript</label>
+                    <label><input type="checkbox"> React</label>
+                    <label><input type="checkbox"> Python</label>
+                    <label><input type="checkbox"> Artificial Intelligence</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Class Preferences</legend>
+                <div class="form-group">
+                    <label>Class Type:</label>
+                    <div class="radio-check-group">
+                        <label><input type="radio" name="class_type" value="online"> Online</label>
+                        <label><input type="radio" name="class_type" value="inperson"> In-person</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Study Hours Per Week:</label>
+                    <input type="number" placeholder="1 - 40" min="1" max="40">
+                </div>
+                <div class="form-group">
+                    <label>Preferred Class Time:</label>
+                    <input type="time">
+                </div>
+                <div class="form-group">
+                    <label>Favorite Color:</label>
+                    <input type="color" value="#0055ff" style="width: 60px; height: 30px; padding: 0;">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>About You</legend>
+                <div class="form-group">
+                    <label>Tell us about yourself:</label>
+                    <textarea rows="4" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Why do you want to learn programming?</label>
+                    <textarea rows="4" placeholder="Tell us about your goals..."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Documents</legend>
+                <div class="form-group">
+                    <label>Upload Your Resume:</label>
+                    <input type="file">
+                </div>
+            </fieldset>
+
+            <div style="margin-top: 15px;">
+                <input type="submit" value="Submit Registration" class="btn-submit">
+                <input type="reset" value="Reset" class="btn-submit" style="margin-left: 8px;">
+            </div>
+        </form>
+    </section>
+
+    <hr class="divider">
+
+    <!-- بخش نقشه گوگل و آدرس لس آنجلس (چپ‌چین) -->
+    <section id="location">
+        <h2>Location & Campus</h2>
+        <p>Our main campus is located in Los Angeles, California.</p>
+        <div class="map-box">
+            <iframe 
+                src="https://maps.google.com/maps?q=Los%20Angeles&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- فوتر دقیقاً مطابق تصویر جدید شما -->
+    <footer>
+        <p>&copy; 2026 TechCamp. All rights reserved.</p>
+        <p><a href="#top">Back to Top</a></p>
+        <p>Follow us: <a href="https://github.com" target="_blank">GitHub</a> | <a href="https://linkedin.com" target="_blank">LinkedIn</a> | <a href="https://youtube.com" target="_blank">YouTube</a></p>
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
+
